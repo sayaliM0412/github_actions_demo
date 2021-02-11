@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-pipeline-python
+  labels:
+    app: github-pipeline-python
+spec:
+  selector:
+    matchLabels:
+      app: github-pipeline-python
+  template:
+    metadata:
+      labels:
+        app: github-pipeline-python
+    spec:
+      serviceAccountName: azure-devops-admin
+      imagePullSecrets:
+        - name: docker-mm-nexus
+      containers:
+        - name: github-pipeline-python
+          image: python3.7 
