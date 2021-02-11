@@ -18,4 +18,4 @@ spec:
         - name: docker-mm-nexus
       containers:
         - name: github-pipeline-python
-          image: python3.7 
+          image: 482780835707.dkr.ecr.us-west-2.amazonaws.com/sys-94:${{ github.sha }} 
